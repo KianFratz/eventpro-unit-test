@@ -38,8 +38,6 @@ def edit_booking_details(driver):
                 EC.element_to_be_clickable((By.CSS_SELECTOR, "[class*='-control']"))
             )
             dropdown.click()
-
-            # wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "")))
             print("✅ Dropdown open")
 
             option_text="Within 1 Hour"

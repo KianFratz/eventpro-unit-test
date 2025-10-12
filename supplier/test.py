@@ -1,8 +1,7 @@
 from login import login
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from shop.edit_booking_details import edit_booking_details
-
+from shop.verify_shop import verify_shop
 
 PATH = "C:/Program Files (x86)/chromedriver.exe"
 
@@ -13,7 +12,7 @@ driver = webdriver.Chrome(service=service)
 # --- Execution ---
 try:
     login(driver)
-    edit_booking_details(driver)
+    verify_shop(driver)
 except Exception as e:
     print(f"An error occurred: {e}")
     
