@@ -1,7 +1,7 @@
 from login import login
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from dashboard.calendar import calendar_test
+from settings.withdraw_balance import withdrawal_balance
 
 PATH = "C:/Program Files (x86)/chromedriver.exe"
 
@@ -12,7 +12,7 @@ driver = webdriver.Chrome(service=service)
 # --- Execution ---
 try:
     login(driver)
-    calendar_test(driver)
+    withdrawal_balance(driver)
 except Exception as e:
     print(f"An error occurred: {e}")
     
