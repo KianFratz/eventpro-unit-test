@@ -1,7 +1,7 @@
 from login import login
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from page_suppliers.textbox_search import textbox_search
+from dashboard.calendar import calendar_test
 
 PATH = "C:/Program Files (x86)/chromedriver.exe"
 
@@ -12,7 +12,7 @@ driver = webdriver.Chrome(service=service)
 # --- Execution ---
 try:
     login(driver)
-    textbox_search(driver)
+    calendar_test(driver)
 except Exception as e:
     print(f"An error occurred: {e}")
     
