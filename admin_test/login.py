@@ -19,7 +19,7 @@ def login(driver):
     password = driver.find_element(By.NAME, "password")
 
     # Add inputs
-    email.send_keys("maryfaith@gmail.com")
+    email.send_keys("admin@admin.com")
     password.send_keys("123123")
 
     # click button
@@ -35,4 +35,4 @@ def login(driver):
         print("Warning: Login successful but URL change timed out.")
         # You might want to raise an error here if a successful redirect is mandatory
 
-    print("✅ Login Successfully")
+    print("✅ Admin Login Successfully")
