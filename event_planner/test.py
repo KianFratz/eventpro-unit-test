@@ -1,7 +1,7 @@
 from login import login
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from notification.view_event import view_event
+from notification.remove import remove
 
 PATH = "C:/Program Files (x86)/chromedriver.exe"
 
@@ -12,7 +12,7 @@ driver = webdriver.Chrome(service=service)
 # --- Execution ---
 try:
     login(driver)
-    view_event(driver)
+    remove(driver)
 except Exception as e:
     print(f"An error occurred: {e}")
     

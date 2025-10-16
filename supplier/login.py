@@ -35,4 +35,4 @@ def login(driver):
         print("Warning: Login successful but URL change timed out.")
         # You might want to raise an error here if a successful redirect is mandatory
 
-    print("✅ Login Successfully")
+    print("✅ Supplier Login Successfully")

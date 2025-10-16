@@ -3,32 +3,36 @@ from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
 import time
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 
-PATH = "C:/Program Files (x86)/chromedriver.exe"
+def login(driver):
+    # Open your login page
+    driver.get("http://localhost:5173/login")
 
-# ✅ Create a Service object
-service = Service(PATH)
-driver = webdriver.Chrome(service=service)
+    # Wait for page load (optional small delay)
+    time.sleep(2)
 
-# Open your login page
-driver.get("http://localhost:5173/login")
+    # Find text boxes and fill them in
+    email = driver.find_element(By.NAME, "email")
+    password = driver.find_element(By.NAME, "password")
 
+    # Add inputs
+    email.send_keys("fratzkian@gmail.com")
+    password.send_keys("123123")
 
-# Wait for page load (optional small delay)
-time.sleep(2)
+    # click button
+    driver.find_element(By.CSS_SELECTOR, "button.bg-blue-600").click()
+        
+    # Explicitly wait for the URL to change to the suppliers page
+    wait = WebDriverWait(driver, 10)
+    try:
+        # Replace 'http://localhost:5173/suppliers' with the actual URL 
+        # of the page you land on after a successful login.
+        wait.until(EC.url_to_be("http://localhost:5173/shop")) 
+    except TimeoutException:
+        print("Warning: Login successful but URL change timed out.")
+        # You might want to raise an error here if a successful redirect is mandatory
 
-# Find text boxes and fill them in
-email = driver.find_element(By.NAME, "email")
-password = driver.find_element(By.NAME, "password")
-
-# fill textbox
-email.send_keys("kanefratz@gmail.com")
-password.send_keys("123123")
-
-# click button
-driver.find_element(By.CSS_SELECTOR, "button.bg-blue-600").click()
-
-print("Event Planner Account Login Successfully")
-
-time.sleep(3)
-driver.quit()
+    print("✅ Event Planner Login Successfully")
