@@ -9,7 +9,7 @@ from selenium.common.exceptions import TimeoutException
 
 def login(driver):
     # Open your login page
-    driver.get("https://unite-eventpro.netlify.app/login")
+    driver.get("http://localhost:5173/login")
 
     # Wait for page load (optional small delay)
     time.sleep(2)
