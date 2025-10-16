@@ -1,7 +1,7 @@
 from login import login
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from events.search import search_events
+from chat.search_contacts import search_contacts
 
 PATH = "C:/Program Files (x86)/chromedriver.exe"
 
@@ -12,7 +12,7 @@ driver = webdriver.Chrome(service=service)
 # --- Execution ---
 try:
     login(driver)
-    search_events(driver)
+    search_contacts(driver)
 except Exception as e:
     print(f"An error occurred: {e}")
     
