@@ -1,7 +1,7 @@
 from login import login
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from settings.deactivate import deactivate
+from settings.update_password import update_password
 
 PATH = "C:/Program Files (x86)/chromedriver.exe"
 
@@ -12,7 +12,7 @@ driver = webdriver.Chrome(service=service)
 # --- Execution ---
 try:
     login(driver)
-    deactivate(driver)
+    update_password(driver)
 except Exception as e:
     print(f"An error occurred: {e}")
     
