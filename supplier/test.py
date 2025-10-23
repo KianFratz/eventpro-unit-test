@@ -1,7 +1,7 @@
 from login import login
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from dashboard.approve_report import approve_report
+from dashboard.report_issue_contract import report_issue_contract
 
 PATH = "C:/Program Files (x86)/chromedriver.exe"
 
@@ -12,7 +12,7 @@ driver = webdriver.Chrome(service=service)
 # --- Execution ---
 try:
     login(driver)
-    approve_report(driver)
+    report_issue_contract(driver)
 except Exception as e:
     print(f"An error occurred: {e}")
     
