@@ -1,7 +1,7 @@
 from login import login
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from events.offer_contract import offer_contract
+from events.confirm_delivery_submission import confirm_delivery_submission
 
 PATH = "C:/Program Files (x86)/chromedriver.exe"
 
@@ -12,7 +12,7 @@ driver = webdriver.Chrome(service=service)
 # --- Execution ---
 try:
     login(driver)
-    offer_contract(driver)
+    confirm_delivery_submission(driver)
 except Exception as e:
     print(f"An error occurred: {e}")
     
